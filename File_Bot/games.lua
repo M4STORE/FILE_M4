@@ -30,7 +30,7 @@ Text_Games = [[
  ٴ𝓜𝟒∫لعبه الحزوره ~⪼لعبة التفكير 
  ٴ𝓜𝟒∫لعبه المعاني ~⪼ العبه الشهيره 
 ٴ●○━━━━  𝓜𝟒 ━━━━●○ٴ
-彡 .[𝘉𝘖𝘠𝘒𝘈 𝘊𝘩𝘢𝘯𝘯𝘦𝘭](t.me/BOBBW)➢
+彡 .[𝕄4 𝕊𝕋𝕆ℝ𝔼 𖠐](t.me/M416Store)➢
 ]]
 send(msg.chat_id_, msg.id_,Text_Games) 
 end
@@ -570,15 +570,6 @@ database:incrby(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_, 1)
 end
 database:set(bot_id..'Set:Amth:Bot'..msg.chat_id_,true)
 end
-if text == 'تعطيل الالعاب' and Manager(msg) then   
-if database:get(bot_id..'Lock:Games'..msg.chat_id_)  then
-database:del(bot_id..'Lock:Games'..msg.chat_id_) 
-Text = '\n ٴ𝓜𝟒∫تم تعطيل الالعاب' 
-else
-Text = '\n ٴ𝓜𝟒∫ بالتاكيد تم تعطيل الالعاب'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
 if text == 'تفعيل الالعاب' and Manager(msg) then  
 if not database:get(bot_id..'Lock:Games'..msg.chat_id_)  then
 database:set(bot_id..'Lock:Games'..msg.chat_id_,true) 
@@ -588,6 +579,16 @@ Text = '\n ٴ𝓜𝟒∫بالتاكيد تم تفعيل الالعاب'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
+if text == 'تعطيل الالعاب' and Manager(msg) then   
+if database:get(bot_id..'Lock:Games'..msg.chat_id_)  then
+database:del(bot_id..'Lock:Games'..msg.chat_id_) 
+Text = '\n ٴ𝓜𝟒∫تم تعطيل الالعاب' 
+else
+Text = '\n ٴ𝓜𝟒∫ بالتاكيد تم تعطيل الالعاب'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+
 
 end
 return {
